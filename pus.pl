@@ -174,13 +174,15 @@ sub submit {
 
 	die colored("I don't see any $archive_file around here...\n", "red") if ! -f $archive_file;
 
+	my $remote_machine = $config{"remote_machine"};
+
 	# ensure that it compiles first
-	print "Running a compilation test... ";
+	print "Running a compilation test on $remote_machine... ";
 	my $output = `$0 rtest $archive_file`;
 	die colored("ERROR\nCompile test failed. Refusing to submit because of this:\n", "red"), $output if $? != 0;
 	print colored("OK!\n", "green");
 
-	my $addr = $config{"user_name"} . "\@" . $config{"remote_machine"};
+	my $addr = $config{"user_name"} . "\@" . $remote_machine;
 	my $repo_url = $config{"handin_repo"};
 
 	# create the repo and copy the archive over
