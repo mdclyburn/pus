@@ -1,5 +1,7 @@
 # Project Utility Script
 
+![PUS](https://github.com/mdclyburn/pus/raw/master/images/rtest.png "Running pus.pl rtest")
+
 ## What is it?
 
 The Project Utility Script, or PUS, is a tool that can be used
