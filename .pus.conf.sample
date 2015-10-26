@@ -1,0 +1,20 @@
+# PUS Config File
+#
+# Some settings for PUS for this project. Name this file '.pus.conf'
+# and place it in the same directory you will run PUS from.
+#
+# Any line beginning with '#' (like this one) is ignored.
+
+user_name = myusername
+
+# The address of the machine to use with the 'rtest' subcommand. SSH
+# is used to run commands on it.
+remote_machine = dragon1.myuni.edu
+
+# The name of the directory that PUS will use to do work in. PUS will
+# also append a timestamp when making submissions.
+remote_directory = .pus_test
+
+# Address of the handin repository to use when submitting the archive.
+# The address can be found on the handin website.
+handin_repo = ssh://handinuser@myhandinserver.myuni.edu/path/to/my/bucket
