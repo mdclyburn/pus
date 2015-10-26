@@ -49,6 +49,8 @@ the results back.
 
 ### rtest
 
+`pus.pl rtest <archive>`
+
 Creates a test directory on the configured remote machine called and
 copies the provided archive over to it. The `make` command is then
 issued. PUS then reports the results back.
@@ -56,6 +58,8 @@ issued. PUS then reports the results back.
 Both the machine and directory to use is specified in the `.pus.conf` file.
 
 ### submit
+
+`pus.pl submit <archive>`
 
 Runs a remote compilation test on the specified archive and, if successful,
 submits it to handin using the configuration specified in `.pus.conf`.
