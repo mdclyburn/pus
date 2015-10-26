@@ -41,9 +41,24 @@ See the provided example configuration for information.
 
 ### ltest
 
+`pus.pl ltest <archive>`
+
+Creates a test directory (called 'pus_test') and copies the provided
+archive into it. The `make` command is then issued. PUS then reports
+the results back.
+
 ### rtest
 
+Creates a test directory on the configured remote machine called and
+copies the provided archive over to it. The `make` command is then
+issued. PUS then reports the results back.
+
+Both the machine and directory to use is specified in the `.pus.conf` file.
+
 ### submit
+
+Runs a remote compilation test on the specified archive and, if successful,
+submits it to handin using the configuration specified in `.pus.conf`.
 
 ### License
 
