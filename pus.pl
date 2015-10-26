@@ -186,13 +186,14 @@ sub submit {
 	my $repo_url = $config{"handin_repo"};
 
 	# create the repo and copy the archive over
+	print " - creating temporary repository...\n";
 	my $remote_dir = ".pus_submit_" . time; # reduce chance of file conflicts
 	$output = `ssh $addr "hg clone $repo_url $remote_dir" 2>&1`;
 	if ($? != 0) {
 		die colored("Repository creation failed. Here is what ssh said:\n", "red"), $output;
 	}
-	print " - created temporary repository\n";
 
+	print " - transferring archive...\n";
 	$output = `scp $archive_file $addr:$remote_dir/`;
 	if ($? != 0) {
 		print colored("Send failed. Here is what scp said:\n", "red");
@@ -200,7 +201,6 @@ sub submit {
 		`ssh $addr "rm -rf $remote_dir"`;
 		exit 1;
 	}
-	print " - transferred archive\n";
 
 	# these Mercurial commands will be issued in order
 	my @hg_commands = ( "ssh $addr \"hg add --cwd $remote_dir $archive_file\" 2>&1",
