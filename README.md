@@ -31,16 +31,6 @@ command line like so:
 If an error occurs during the process at any time, PUS will relay
 the relevant output to the terminal so you can correct it.
 
-## Configuration
-
-There are a few extra pieces of information that PUS needs before it can
-begin working magic for you. This includes: a remote machine address, a
-valid user name for that remote machine, the handin repository URL, and
-a remote directory to do work in (so that PUS doesn't accidentally erase
-your stuff!).
-
-See the provided example configuration for information.
-
 ### ltest
 
 `pus.pl ltest <archive>`
@@ -65,6 +55,29 @@ Both the machine and directory to use is specified in the `.pus.conf` file.
 
 Runs a remote compilation test on the specified archive and, if successful,
 submits it to handin using the configuration specified in `.pus.conf`.
+
+## Configuration
+
+There are a few extra pieces of information that PUS needs before it can
+begin working magic for you. This includes: a remote machine address, a
+valid user name for that remote machine, the handin repository URL, and
+a remote directory to do work in (so that PUS doesn't accidentally erase
+your stuff!).
+
+See the provided example configuration for brief information.
+
+* `handin_repo` is the full path to the handin repository used in the `submit` subcommand.
+
+* `remote_directory` is the directory that PUS will create and work in when testing your archive.
+PUS will refuse to work in the directory if it alread exists.
+This is simply because PUS removes the entire directory tree after it finishes.
+When the `submit` subcommand is used, a timestamp is appended to this name to minimize the likelihood of collisions during this more sensitive operation.
+
+* `remote_machine` is the address of the machine that the `rtest` subcommand will use.
+PUS accesses this machine via SSH.
+Currently, there is no way to specify a different port; however, this is an easy modification to the script.
+
+* `user_name` is the user name to be used when logging into the remote machine.
 
 ### License
 
