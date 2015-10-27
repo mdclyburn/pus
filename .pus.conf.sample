@@ -5,6 +5,11 @@
 #
 # Any line beginning with '#' (like this one) is ignored.
 
+# The name of the archive to use when it is not specified on the command
+# line.
+default_archive = web_server.tgz
+
+# The user name to be used when logging into remote_machine.
 user_name = myusername
 
 # The address of the machine to use with the 'rtest' subcommand. SSH

@@ -66,6 +66,10 @@ your stuff!).
 
 See the provided example configuration for brief information.
 
+* `default_archive` is the name that PUS will assume the project archive is called if unspecified.
+If an archive is provided as an argument, this option is ignored.
+So, if this options were set to 'web_server.tgz', typing `pus.pl rtest` is the same as using `pus.pl rtest web_server.tgz`.
+
 * `handin_repo` is the full path to the handin repository used in the `submit` subcommand.
 
 * `remote_directory` is the directory that PUS will create and work in when testing your archive.

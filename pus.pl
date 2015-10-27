@@ -59,6 +59,12 @@ sub read_configuration {
 		$config{$opt} = $setting unless (!defined $setting);
 	}
 
+	# set the archive if it has been specified in configuration
+	# but don't ignore the user's command
+	if(!defined $ARGV[1] && defined $config{"default_archive"}) {
+		$ARGV[1] = $config{"default_archive"};
+	}
+
 	close(CONFIG);
 	return;
 }
