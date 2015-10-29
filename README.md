@@ -10,9 +10,9 @@ can be sure that your code compiles on school computers.
 
 ## Prerequisites
 
-In order to use PUS, you'll need only a Makefile (likely with
-some sort of rule to create a gzipped tarball). PUS does not
-make the archive for you.
+In order to use PUS, you'll need Perl 5 installed on your system.
+PUS also requires that the archives that it works with include a Makefile.
+When PUS tests archives by extracting them to a new directory and running `make`.
 
 ## Subcommands
 
