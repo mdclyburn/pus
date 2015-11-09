@@ -12,7 +12,7 @@ can be sure that your code compiles on school computers.
 
 In order to use PUS, you'll need Perl 5 installed on your system.
 PUS also requires that the archives that it works with include a Makefile.
-When PUS tests archives by extracting them to a new directory and running `make`.
+When PUS tests archives, it extracts them to a new directory and runs `make`.
 
 ## Subcommands
 
