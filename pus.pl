@@ -91,7 +91,14 @@ sub local_compile {
 	}
 
 	# the simple make; what pretty much any instructor or TA will do
-	$output = `make 2>&1`;
+	if(`uname -a` =~ /BSD/) {
+		print colored("This looks like a BSD; I'm using gmake instead.\n", "blue");
+		$output = `gmake 2>&1`;
+	}
+	else {
+		$output = `make 2>&1`;
+	}
+
 	if($? != 0) { # compilation failed and we still have to clean up
 		print colored("Make failed. Here is what it said:\n", "red");
 		print $output;
