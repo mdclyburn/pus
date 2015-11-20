@@ -1,6 +1,6 @@
 # Project Utility Script
 
-![PUS](https://github.com/mdclyburn/pus/raw/master/images/rtest.png "Running pus.pl rtest")
+![PUS](http://mardev.net/pus/rtest.png "Running pus.pl rtest")
 
 ## What is it?
 
