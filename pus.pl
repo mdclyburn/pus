@@ -44,7 +44,7 @@ elsif ($ARGV[0] eq "submit") {
 	submit($ARGV[1]);
 }
 else {
-	die "Usage: pus.pl <localtest | labtest | submit> archive\n";
+	die "Usage: pus.pl <ltest | rtest | submit> archive\n";
 }
 
 # Read the configuration file.
